@@ -1,0 +1,73 @@
+name: tharwati
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher:
+  cupertino_icons: ^1.0.6
+  iconsax:
+  persistent_bottom_nav_bar: ^6.2.1
+  shared_preferences: ^2.3.1
+  carousel_slider_plus:
+  smooth_page_indicator: ^1.1.0
+  ntp: ^2.0.0
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.6
+  image_picker: ^1.1.2
+  permission_handler: ^11.3.1
+  hive_flutter:
+  path_provider:
+  photo_view:
+
+  # firebase
+  firebase_core:
+  cloud_firestore:
+  firebase_storage:
+  firebase_auth:
+  path:
+  google_mobile_ads: ^5.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^4.0.0
+  hive_generator:
+  build_runner:
+
+    #  App Icon
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/icons/dollars_logo.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/animation/
+    - assets/icons/dollars_logo.png
+
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+
+

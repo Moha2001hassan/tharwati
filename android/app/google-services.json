@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "582975350646",
+    "project_id": "deli-food-3e127",
+    "storage_bucket": "deli-food-3e127.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582975350646:android:e4c2d09b5def561814bc57",
+        "android_client_info": {
+          "package_name": "com.example.admin_dollars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582975350646-s4kcnca1t1v447g9a743ha2mlulgghks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArmsIum7MgODUuuGYdb2cezUtbPmmcYnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582975350646-s4kcnca1t1v447g9a743ha2mlulgghks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582975350646:android:a2bf2c16f11d879314bc57",
+        "android_client_info": {
+          "package_name": "com.example.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582975350646-s4kcnca1t1v447g9a743ha2mlulgghks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArmsIum7MgODUuuGYdb2cezUtbPmmcYnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582975350646-s4kcnca1t1v447g9a743ha2mlulgghks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582975350646:android:3d7fe5c69cf3fa5514bc57",
+        "android_client_info": {
+          "package_name": "com.example.dollars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582975350646-s4kcnca1t1v447g9a743ha2mlulgghks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArmsIum7MgODUuuGYdb2cezUtbPmmcYnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582975350646-s4kcnca1t1v447g9a743ha2mlulgghks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582975350646:android:f0958c7e34265d1114bc57",
+        "android_client_info": {
+          "package_name": "com.mh7.tharwati"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582975350646-s4kcnca1t1v447g9a743ha2mlulgghks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArmsIum7MgODUuuGYdb2cezUtbPmmcYnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582975350646-s4kcnca1t1v447g9a743ha2mlulgghks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

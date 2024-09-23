@@ -1,0 +1,143 @@
+import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import '../../../../data/models/counter.dart';
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/text_strings.dart';
+import '../../../shared_widgets/rounded_container.dart';
+import '../../../shared_widgets/rounded_image.dart';
+import 'counter_dialog.dart';
+
+class CardItemVertical extends StatelessWidget {
+  const CardItemVertical({super.key, required this.counter});
+
+  final Counter counter;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      elevation: 4,
+      borderRadius: BorderRadius.circular(10),
+      child: Container(
+        width: 155,
+        padding: const EdgeInsets.all(0.5),
+        decoration: BoxDecoration(
+          color: MyColors.grey,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Stack(
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                // Image
+                RoundedContainer(
+                  height: 180,
+                  backgroundColor: MyColors.light,
+                  child: RoundedImage(
+                    imgUrl: counter.imageUrl,
+                    applyImgRadius: true,
+                    backgroundColor: MyColors.light,
+                    fit: BoxFit.cover,
+                    isNetworkImage: true,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                // Title
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(horizontal: 7),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const Text(
+                        " :${MyTexts.dailyIncome}",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "${counter.dailyIncome.toDouble()}",
+                            maxLines: 1,
+                            textAlign: TextAlign.start,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.orange,
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Image.asset(MyImages.dollarAnimation, height: 22),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const Spacer(),
+                // Add Button & Price
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          color: MyColors.dark,
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(12),
+                            bottomLeft: Radius.circular(12),
+                          ),
+                        ),
+                        child: const SizedBox(
+                          width: 32,
+                          height: 32,
+                          child: Center(child: Icon(Iconsax.add, color: Colors.white)),
+                        ),
+                      ),
+                    ),
+                    // Price
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12.0),
+                      child: Text(
+                        '${counter.price} \$',
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepOrange,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            if (!counter.isAvailable) // update to True
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: IconButton(
+                  onPressed: () {
+                    showCounterDialog(
+                      context: context,
+                      counter: counter,
+                    );
+                  },
+                  icon: const Icon(Icons.lock, color: Colors.white, size: 30),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
