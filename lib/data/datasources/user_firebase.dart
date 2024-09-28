@@ -48,7 +48,7 @@ Future<MyUser?> getUserData(String userId) async {
       return null; // User does not exist
     }
   } catch (e) {
-    print('Error getting user data: $e');
+    debugPrint('Error getting user data: $e');
     return null;
   }
 }
@@ -61,7 +61,7 @@ Future<void> updateUserProfile(String imageUrl) async {
       MyKeys.imageUrl: imageUrl,
     });
   } catch (e) {
-    print('Error getting user data: $e');
+    debugPrint('Error getting user data: $e');
     return;
   }
 }
@@ -75,7 +75,7 @@ Future<void> updateUserDiamondsDollars(int diamondsNumber, double dollarsNumber)
       MyKeys.dollarsNumber: dollarsNumber,
     });
   } catch (e) {
-    print('Error getting user data: $e');
+    debugPrint('Error getting user data: $e');
     return;
   }
 }
@@ -94,10 +94,10 @@ Future<void> checkCountersAvailability() async {
           if (counter.expireDate.isAfter(currentTime)) {
             updatedDailyIncome += counter.dailyIncome;
             counter.isAvailable = true;
-            print('Counter ${counter.title} is available');
+            debugPrint('Counter ${counter.title} is available');
           } else {
             counter.isAvailable = false;
-            print('Counter ${counter.title} is not available');
+            debugPrint('Counter ${counter.title} is not available');
           }
         }
       }
@@ -107,9 +107,9 @@ Future<void> checkCountersAvailability() async {
         MyKeys.userCounters: userCounters?.map((c) => c.toMap()).toList() ?? [],
       });
     }
-    print('User data updated successfully');
+    debugPrint('User data updated successfully');
   } catch (e) {
-    print('Error getting user data: $e');
+    debugPrint('Error getting user data: $e');
     return;
   }
 }

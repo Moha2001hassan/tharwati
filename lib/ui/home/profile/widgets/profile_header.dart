@@ -74,13 +74,13 @@ class _ProfileHeaderState extends State<ProfileHeader> {
           _isLoading = false;
         });
       } else {
-        print('User does not exist in Firestore.');
+        debugPrint('User does not exist in Firestore.');
         setState(() {
           _isLoading = false;
         });
       }
     } catch (e) {
-      print('Error fetching user data: $e');
+      debugPrint('Error fetching user data: $e');
       setState(() {
         _isLoading = false;
       });

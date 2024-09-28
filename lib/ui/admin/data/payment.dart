@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 
 Future<void> updateApprovedDepositRequest(
   String docId,
@@ -18,12 +19,12 @@ Future<void> updateApprovedDepositRequest(
           .update({'diamondsNumber': updatedDiamonds});
 
       updateDepositRequestStatus(docId, status);
-      print('Diamonds number updated successfully!');
+      debugPrint('Diamonds number updated successfully!');
     } else {
-      print('User not found');
+      debugPrint('User not found');
     }
   } catch (e) {
-    print('Error updating approved request: $e');
+    debugPrint('Error updating approved request: $e');
   }
 }
 
@@ -34,7 +35,7 @@ Future<void> updateDepositRequestStatus(String docId, String status) async {
         .doc(docId)
         .update({'status': status});
   } catch (e) {
-    print('Error updating request status: $e');
+    debugPrint('Error updating request status: $e');
   }
 }
 Future<void> updateWithdrawRequestStatus(String docId, String status) async {
@@ -44,7 +45,7 @@ Future<void> updateWithdrawRequestStatus(String docId, String status) async {
         .doc(docId)
         .update({'status': status});
   } catch (e) {
-    print('Error updating request status: $e');
+    debugPrint('Error updating request status: $e');
   }
 }
 

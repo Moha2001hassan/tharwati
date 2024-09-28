@@ -132,9 +132,9 @@ class _LoginFormState extends State<LoginForm> {
         // Fetch user data from Firestore
         MyUser? myUser = await getUserData(userId);
 
-        print("________Saving login status: true");
+        debugPrint("________Saving login status: true");
         await FirebaseAuthService().saveLoginStatus(true);
-        print("________Login status saved");
+        debugPrint("________Login status saved");
 
         if (myUser != null) {
           await storeUserLocally(myUser);

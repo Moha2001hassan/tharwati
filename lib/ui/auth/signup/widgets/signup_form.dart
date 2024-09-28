@@ -52,13 +52,14 @@ class _SignUpFormState extends State<SignUpForm> {
             keyboardType: TextInputType.phone,
           ),
           const SizedBox(height: 12),
-          buildTextField(
+          // Invite Code
+          /*buildTextField(
             controller: _inviteCodeController,
             labelText: MyTexts.inviteCode,
             prefixIcon: Icons.mark_email_read_outlined,
             keyboardType: TextInputType.phone,
-          ),
-          const SizedBox(height: 12),
+          )
+          const SizedBox(height: 12),,*/
           // Email
           buildTextField(
             controller: _emailController,
@@ -114,9 +115,10 @@ class _SignUpFormState extends State<SignUpForm> {
   Future<void> _signUp() async {
     try {
       // Validate the invite code and get the inviter's document reference
-      final DocumentSnapshot? inviterDoc = await _validateInviteCode();
+      //final DocumentSnapshot? inviterDoc = await _validateInviteCode();
 
-      if (inviterDoc != null) {
+      //if (inviterDoc != null) {
+      if (true) {
         UserCredential userCredential =
         await _authService.signUpWithEmailAndPassword(
           _emailController.text.trim(),
@@ -141,7 +143,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
         await saveUserData(userCredential.user, newUser.toMap());
         await _authService.sendEmailVerification(userCredential.user);
-        await _updateInviterData(inviterDoc, newUserUid);
+        //await _updateInviterData(inviterDoc, newUserUid);
         showSnackBar(MyTexts.emailCreatedVerifyIt, Colors.green, context);
       } else {
         ScaffoldMessenger.of(context).showSnackBar(

@@ -79,7 +79,7 @@ class _GlobalTimerState extends State<GlobalTimer> {
         }
       }
     } catch (e) {
-      print('Error loading timer: $e');
+      debugPrint('Error loading timer: $e');
     } finally {
       setState(() {});
     }
@@ -132,7 +132,7 @@ class _GlobalTimerState extends State<GlobalTimer> {
       _elapsedPercentage = 0.0;
       _startInternalTimer();
     } catch (e) {
-      print('Error starting timer: $e');
+      debugPrint('Error starting timer: $e');
     } finally {
       setState(() {});
     }

@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
         imageUrls.add(imageUrl);
       }
     } catch (e) {
-      print('Error fetching images: $e');
+      debugPrint('Error fetching images: $e');
     }
     return imageUrls;
   }

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FirebaseAuthService {
@@ -59,7 +60,7 @@ class FirebaseAuthService {
         return true;
       } on FirebaseAuthException catch (e) {
         // Handle errors like wrong password, etc.
-        print("Error during re-authentication: ${e.message}");
+        debugPrint("Error during re-authentication: ${e.message}");
         return false;
       }
     }

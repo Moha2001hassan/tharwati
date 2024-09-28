@@ -57,7 +57,7 @@ class _WalletScreenState extends State<WalletScreen> {
         _dailyIncome = userData['dailyIncome'] ?? 0;
       });
     } catch (error) {
-      print(error);
+      debugPrint("$error");
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Failed to retrieve diamonds number.')),
       );
