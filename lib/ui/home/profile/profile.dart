@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:tharwati/data/shared_pref/local_storage.dart';
 import 'package:tharwati/utils/helpers/navigation.dart';
 import '../../../data/datasources/auth_firebase.dart';
 import '../../../data/datasources/payment_logic.dart';
@@ -28,6 +29,18 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  bool _isGuest = false;
+
+  @override
+  void initState() {
+    getIsUserGuest();
+    super.initState();
+  }
+
+  getIsUserGuest() async {
+    _isGuest = await getIsGuest();
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<MyUser?>(
@@ -57,6 +70,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                     // Name
                     ProfileMenu(
+                        isGuest: _isGuest,
                         title: MyTexts.name,
                         icon: Iconsax.edit,
                         value: user!.fullName,
@@ -65,6 +79,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         }),
                     // Phone Number
                     ProfileMenu(
+                        isGuest: _isGuest,
                         title: MyTexts.phoneNumber,
                         icon: Iconsax.edit,
                         value: user.phoneNumber,
@@ -145,7 +160,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     const SizedBox(height: 10),
 
-                    MaterialButton(
+                    if (!_isGuest) MaterialButton(
                       onPressed: () async {
                         if (context.mounted) {
                           showDeleteAccountDialog(

@@ -8,11 +8,13 @@ class ProfileMenu extends StatelessWidget {
     required this.value,
     required this.onPressed,
     this.icon,
+    this.isGuest = false,
   });
 
   final String title, value;
   final IconData? icon;
   final VoidCallback onPressed;
+  final bool isGuest;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class ProfileMenu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               // Icon
-              IconButton(
+              if(!isGuest) IconButton(
                 icon: Icon(icon, size: 19),
                 onPressed: icon == null ? null : onPressed,
               ),

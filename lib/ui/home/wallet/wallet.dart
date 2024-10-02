@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tharwati/utils/helpers/navigation.dart';
 import '../../../data/datasources/user_firebase.dart';
 import '../../../data/hive/hive_user_service.dart';
+import '../../../data/shared_pref/local_storage.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/text_strings.dart';
@@ -21,6 +22,7 @@ class WalletScreen extends StatefulWidget {
 
 class _WalletScreenState extends State<WalletScreen> {
   String? _selectedButton;
+  bool _isGuest = false;
   // Colors
   final Color selectedColor = MyColors.primary;
   final Color unselectedColor = Colors.grey;
@@ -31,8 +33,9 @@ class _WalletScreenState extends State<WalletScreen> {
 
   @override
   void initState() {
-    super.initState();
+    getIsUserGuest();
     _fetchUserData();
+    super.initState();
   }
 
   Future<void> _fetchUserData() async {
@@ -105,7 +108,7 @@ class _WalletScreenState extends State<WalletScreen> {
               const Divider(),
               const SizedBox(height: 10),
 
-              Row(
+               if(!_isGuest) Row(
                 children: [
                   Expanded(
                     child: CustomButton(
@@ -218,5 +221,9 @@ class _WalletScreenState extends State<WalletScreen> {
         ),
       ),
     );
+  }
+
+  getIsUserGuest() async {
+    _isGuest = await getIsGuest();
   }
 }

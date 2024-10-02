@@ -23,7 +23,7 @@ android {
         applicationId = "com.mh7.tharwati"
         minSdk = 23
         targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
+        versionCode = 2
         versionName = flutter.versionName
     }
 

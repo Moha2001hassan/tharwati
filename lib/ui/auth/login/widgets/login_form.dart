@@ -6,6 +6,7 @@ import '../../../../data/datasources/auth_firebase.dart';
 import '../../../../data/datasources/user_firebase.dart';
 import '../../../../data/hive/hive_user_service.dart';
 import '../../../../data/models/user.dart';
+import '../../../../data/shared_pref/local_storage.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/handle_auth_error.dart';
 import '../../../../utils/routing/routes.dart';
@@ -140,6 +141,7 @@ class _LoginFormState extends State<LoginForm> {
           await storeUserLocally(myUser);
           // save userId in shared preferences
           await saveUserId(userId);
+          saveIsGuest(false);
           context.pushNamedAndRemoveUntil(
             Routes.homeScreen,
             predicate: (route) => false,
