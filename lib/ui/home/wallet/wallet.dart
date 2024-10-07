@@ -22,7 +22,7 @@ class WalletScreen extends StatefulWidget {
 
 class _WalletScreenState extends State<WalletScreen> {
   String? _selectedButton;
-  bool _isGuest = false;
+  bool _isGuest = true;
   // Colors
   final Color selectedColor = MyColors.primary;
   final Color unselectedColor = Colors.grey;

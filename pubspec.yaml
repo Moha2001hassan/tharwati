@@ -1,7 +1,7 @@
 name: tharwati
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.1+2
+version: 1.0.3+4
 
 environment:
   sdk: ^3.5.1
@@ -32,6 +32,7 @@ dependencies:
   firebase_auth:
   path:
   google_mobile_ads: ^5.1.0
+  connectivity_plus: ^3.0.3
 
 dev_dependencies:
   flutter_test:

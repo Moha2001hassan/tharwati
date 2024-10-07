@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       context.pushNamedAndRemoveUntil(
         Routes.onboardingScreen,
-        predicate: (route) => false, // Remove all previous routes
+        predicate: (route) => false,
       );
     }
   }

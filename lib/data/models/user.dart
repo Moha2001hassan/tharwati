@@ -100,8 +100,8 @@ class MyUser {
       email: map['email'],
       phoneNumber: map['phoneNumber'],
       diamondsNumber: map['diamondsNumber'],
-      dailyIncome: map['dailyIncome'],
-      dollarsNumber: map['dollarsNumber'],
+      dailyIncome: map['dailyIncome'].toDouble(),
+      dollarsNumber: map['dollarsNumber'].toDouble(),
       imageUrl: map['imageUrl'],
       invitedIDs: List<String>.from(map['invitedIDs'] ?? []),
       userCounters: (map['userCounters'] as List<dynamic>?)

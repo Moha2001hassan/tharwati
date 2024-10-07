@@ -67,7 +67,8 @@ class _GlobalTimerState extends State<GlobalTimer> {
         _remainingTime = duration - elapsedTime;
 
         if (_remainingTime > 0) {
-          _elapsedPercentage = elapsedTime / GlobalTimerService.totalDurationInSeconds;
+          _elapsedPercentage =
+              elapsedTime / GlobalTimerService.totalDurationInSeconds;
           _startInternalTimer();
         } else {
           _remainingTime = 0;
@@ -93,7 +94,8 @@ class _GlobalTimerState extends State<GlobalTimer> {
       setState(() {
         if (_remainingTime > 0) {
           _remainingTime--;
-          _elapsedPercentage = 1.0 - (_remainingTime / GlobalTimerService.totalDurationInSeconds);
+          _elapsedPercentage = 1.0 -
+              (_remainingTime / GlobalTimerService.totalDurationInSeconds);
         } else {
           timer.cancel();
           _isTimerRunning = false;
@@ -106,7 +108,8 @@ class _GlobalTimerState extends State<GlobalTimer> {
 
   Future<void> _handleTimerCompletion() async {
     int newDiamondsNumber = _diamondsNumber ?? 0;
-    double newDollarsNumber = (_dailyIncome ?? 0.0001) + (_dollarsNumber ?? 0.0);
+    double newDollarsNumber =
+        (_dailyIncome ?? 0.0001) + (_dollarsNumber ?? 0.0);
 
     await updateUserDiamondsDollars(newDiamondsNumber, newDollarsNumber);
 
@@ -173,7 +176,8 @@ class _GlobalTimerState extends State<GlobalTimer> {
                 child: Container(
                   width: size - 45,
                   height: size - 45,
-                  decoration: const BoxDecoration(color: Colors.white,shape: BoxShape.circle),
+                  decoration: const BoxDecoration(
+                      color: Colors.white, shape: BoxShape.circle),
                   child: Center(
                     child: Stack(
                       children: [
@@ -183,7 +187,9 @@ class _GlobalTimerState extends State<GlobalTimer> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Text(
-                                _dailyIncome != null ? '$_dailyIncome' : '5',
+                                _dailyIncome != null
+                                    ? _dailyIncome!.toStringAsFixed(5)
+                                    : '0.0001',
                                 style: const TextStyle(
                                   fontSize: 30,
                                   fontWeight: FontWeight.bold,

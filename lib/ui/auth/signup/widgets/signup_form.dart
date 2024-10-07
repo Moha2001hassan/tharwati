@@ -125,7 +125,6 @@ class _SignUpFormState extends State<SignUpForm> {
           _passwordController.text.trim(),
         );
 
-        String newUserUid = userCredential.user!.uid;
         String userId = await generateUniqueUserId();
 
         MyUser newUser = MyUser(
@@ -145,14 +144,15 @@ class _SignUpFormState extends State<SignUpForm> {
         await _authService.sendEmailVerification(userCredential.user);
         //await _updateInviterData(inviterDoc, newUserUid);
         showSnackBar(MyTexts.emailCreatedVerifyIt, Colors.green, context);
-      } else {
+      }
+    /*else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text("كود الدعوة غير صحيح"),
             backgroundColor: Colors.red,
           ),
         );
-      }
+      }*/
     } on FirebaseAuthException catch (e) {
       handleAuthError(e, context);
     } finally {
